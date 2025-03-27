@@ -1,21 +1,12 @@
-name: pytest
+name: workflow_env
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
-  pull_request:
-    types: [opened]
 
 jobs:
-  pytest:
+  build-in-env:
     runs-on: ubuntu-latest
     steps:
-      - name: print github action contexts
-        run: echo ${{ github.repositoryUrl }}
       - name: checkout code
         uses: actions/checkout@v4
-      - name: install pytest
-        run: pip install pytest
-      - name: run pytest
-        run: pytest
+      - name: check default env
+        run: env
