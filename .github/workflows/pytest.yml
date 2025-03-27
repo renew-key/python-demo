@@ -10,3 +10,5 @@ jobs:
         uses: actions/checkout@v4
       - name: check default env
         run: env
+      - name: print env
+        run: echo $GITHUB_REPOSITORY
